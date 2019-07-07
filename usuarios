@@ -1,0 +1,5 @@
+INSERT INTO public.usuarios(
+	nome, login, email, senha,
+	data_criacao, tempo_expiracao_senha,
+	cod_autorizacao, status_usuario, cod_pessoa)
+	VALUES ('Cesar', 'Admin', 'cesar.grachik@gmail.com', '123','09/05/2019', 3, '1', 'A', 1);
