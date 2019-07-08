@@ -1,5 +1,6 @@
 package com.acesso.api.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,21 +13,27 @@ public class Perfil {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idPerfil;
-	private String nome_perfil;
-	public Integer getIdPerfil() {
+	private Long idPerfil;
+	
+	@Column(name="nome_perfil")
+	private String nomePerfil;
+
+	public String getNomePerfil() {
+		return nomePerfil;
+	}
+
+	public void setNomePerfil(String nomePerfil) {
+		this.nomePerfil = nomePerfil;
+	}
+
+	public Long getIdPerfil() {
 		return idPerfil;
 	}
 	
-	public void setIdPerfil(Integer idPerfil) {
+	public void setIdPerfil(Long idPerfil) {
 		this.idPerfil = idPerfil;
 	}
-	public String getNome_perfil() {
-		return nome_perfil;
-	}
-	public void setNome_perfil(String nome_perfil) {
-		this.nome_perfil = nome_perfil;
-	}
+
 	
 
 	@Override

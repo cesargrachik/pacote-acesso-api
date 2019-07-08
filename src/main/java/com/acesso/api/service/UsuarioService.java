@@ -19,8 +19,11 @@ public class UsuarioService {
 	
 	public void atualizarPropriedadeAtivo(Long codigo, String ativo) {
 		Usuarios usuarioSalva = buscarPessoaPeloCodigo(codigo);
-		usuarioSalva.setStatus_usuario(ativo);
-		usuariosRepository.save(usuarioSalva);
+		if (ativo.equals("true"))  
+			usuarioSalva.setStatus_usuario("A"); 
+		  else 
+	        usuarioSalva.setStatus_usuario("I");  
+    	usuariosRepository.save(usuarioSalva);
 	}
 	
 	public Usuarios atualizar(Long codigo, Usuarios usuarios) {

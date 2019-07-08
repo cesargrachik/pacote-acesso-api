@@ -1,5 +1,6 @@
 package com.acesso.api.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +16,9 @@ public class Aparelhos {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id_aparelho;
 	
-	private String descricao_aparelho;
+	@Column(name="descricao_aparelho")
+	private String descricaoAparelho;
+
 	private String codigo_aparelho;
 	public Integer getId_aparelho() {
 		return id_aparelho;
@@ -23,12 +26,14 @@ public class Aparelhos {
 	public void setId_aparelho(Integer id_aparelho) {
 		this.id_aparelho = id_aparelho;
 	}
-	public String getDescricao_aparelho() {
-		return descricao_aparelho;
+	
+	public String getDescricaoAparelho() {
+		return descricaoAparelho;
 	}
-	public void setDescricao_aparelho(String descricao_aparelho) {
-		this.descricao_aparelho = descricao_aparelho;
+	public void setDescricaoAparelho(String descricaoAparelho) {
+		this.descricaoAparelho = descricaoAparelho;
 	}
+
 	public String getCodigo_aparelho() {
 		return codigo_aparelho;
 	}
