@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -115,7 +116,7 @@ public class Usuarios {
 		this.cod_pessoa = cod_pessoa;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "usuarios_perfil", joinColumns = @JoinColumn(name = "codigo_usuario"),
 	inverseJoinColumns = @JoinColumn(name = "codigo_perfil"))
 	private List<Perfil> usuariosPerfil;
@@ -129,7 +130,7 @@ public class Usuarios {
 	}
 
 
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "usuarios_aparelhos", joinColumns = @JoinColumn(name = "codigo_usuario"),
 	inverseJoinColumns = @JoinColumn(name =	"codigo_aparelho")) 
 	private Set<Aparelhos> usuariosAparelhos;
@@ -138,8 +139,8 @@ public class Usuarios {
 
 	public void setUsuariosAparelhos(Set<Aparelhos> usuariosAparelhos) {
 		this.usuariosAparelhos = usuariosAparelhos; }
-
-
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

@@ -1,6 +1,0 @@
-insert into perfil (nome_perfil)
-values ('Administrador');
-insert into perfil (nome_perfil)
-values ('Analista de Sistemas');
-insert into perfil (nome_perfil)
-values ('Gerente');

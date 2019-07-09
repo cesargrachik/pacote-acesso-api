@@ -28,11 +28,13 @@ public class UsuarioService {
 	
 	public Usuarios atualizar(Long codigo, Usuarios usuarios) {
 		Optional<Usuarios> usuarioSalva = usuariosRepository.findById(codigo);
+		
+		
 
 		if (!usuarioSalva.isPresent()) {
 			throw new EmptyResultDataAccessException(1);
 		}
-
+        
 		BeanUtils.copyProperties(usuarios, usuarioSalva,"codigo"); 
 		usuarios.setId_usuario(codigo);
 		return usuariosRepository.save(usuarios);

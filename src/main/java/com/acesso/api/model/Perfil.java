@@ -33,7 +33,6 @@ public class Perfil {
 	public void setIdPerfil(Long idPerfil) {
 		this.idPerfil = idPerfil;
 	}
-
 	
 
 	@Override

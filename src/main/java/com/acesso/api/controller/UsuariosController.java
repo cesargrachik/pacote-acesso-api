@@ -88,6 +88,7 @@ public class UsuariosController {
 	public ResponseEntity<Usuarios> criar(@Valid @RequestBody Usuarios usuario, HttpServletResponse response) {
 		LocalDate hoje = LocalDate.now();
 		usuario.setData_criacao(hoje);
+		// List<Perfil> lista = usuario.getUsuariosPerfil();
 		Usuarios usuarioSalvo = usuariosRepository.save(usuario);
 		publisher.publishEvent(new RecursoCriadoEvent(this, response, usuarioSalvo.getId_usuario()));
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioSalvo);

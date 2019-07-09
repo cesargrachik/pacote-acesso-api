@@ -14,16 +14,16 @@ public class Aparelhos {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_aparelho;
+	private Long id_aparelho;
 	
 	@Column(name="descricao_aparelho")
 	private String descricaoAparelho;
 
 	private String codigo_aparelho;
-	public Integer getId_aparelho() {
+	public Long getId_aparelho() {
 		return id_aparelho;
 	}
-	public void setId_aparelho(Integer id_aparelho) {
+	public void setId_aparelho(Long id_aparelho) {
 		this.id_aparelho = id_aparelho;
 	}
 	
@@ -40,11 +40,13 @@ public class Aparelhos {
 	public void setCodigo_aparelho(String codigo_aparelho) {
 		this.codigo_aparelho = codigo_aparelho;
 	}
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((codigo_aparelho == null) ? 0 : codigo_aparelho.hashCode());
+		result = prime * result + ((id_aparelho == null) ? 0 : id_aparelho.hashCode());
 		return result;
 	}
 	@Override
@@ -56,14 +58,14 @@ public class Aparelhos {
 		if (getClass() != obj.getClass())
 			return false;
 		Aparelhos other = (Aparelhos) obj;
-		if (codigo_aparelho == null) {
-			if (other.codigo_aparelho != null)
+		if (id_aparelho == null) {
+			if (other.id_aparelho != null)
 				return false;
-		} else if (!codigo_aparelho.equals(other.codigo_aparelho))
+		} else if (!id_aparelho.equals(other.id_aparelho))
 			return false;
 		return true;
 	}
-
+	
 	
 	
 	

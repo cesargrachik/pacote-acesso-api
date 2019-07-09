@@ -1,6 +1,0 @@
-insert into aparelhos (descricao_aparelho,codigo_aparelho)
-values ('Secador','7893562300120');
-insert into aparelhos (descricao_aparelho,codigo_aparelho)
-values ('Notebook','7893562300122');
-insert into aparelhos (descricao_aparelho,codigo_aparelho)
-values ('Interfone','7893562300123');
